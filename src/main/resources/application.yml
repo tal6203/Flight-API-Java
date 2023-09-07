@@ -1,0 +1,7 @@
+min_RemainingTickets : 0
+min_PasswordLength : 6
+cache_on: false
+redis:
+  host: localhost
+  port: 6377
+  ttl: 72000
