@@ -23,7 +23,7 @@ FROM openjdk:17
 WORKDIR /app
 
 # Copy the JAR file from the build stage to this stage
-COPY --from=build /app/target/demo_render-0.0.1-SNAPSHOT.jar demo.jar
+COPY --from=build /app/target/demo-0.0.1-SNAPSHOT.jar demo.jar
 
 # Expose the port (if needed)
 # EXPOSE 8080
