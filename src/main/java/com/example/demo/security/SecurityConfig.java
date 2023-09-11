@@ -52,7 +52,13 @@ public class SecurityConfig  {
         return authConfig.getAuthenticationManager();
     }
 
-
+   public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/**") // You can specify URL patterns here
+                .allowedOrigins("https://safe-flight.netlify.app")
+                .allowedMethods("GET", "POST", "PUT", "DELETE")
+                .allowedHeaders("Content-Type", "Authorization")
+                .allowCredentials(true);
+    }
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
