@@ -14,6 +14,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
 
 
 @Configuration
@@ -51,8 +52,7 @@ public class SecurityConfig  {
     public AuthenticationManager authenticationManager(AuthenticationConfiguration authConfig) throws Exception {
         return authConfig.getAuthenticationManager();
     }
-
-   public void addCorsMappings(CorsRegistry registry) {
+  public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**") // You can specify URL patterns here
                 .allowedOrigins("https://safe-flight.netlify.app")
                 .allowedMethods("GET", "POST", "PUT", "DELETE")
